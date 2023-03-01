@@ -11,6 +11,17 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3.3.0
+        
+      - name: configure amplify
+        uses: ambientlight/amplify-cli-action@0.3.0
+        with:
+          amplify_command: configure
+          amplify_env: hms
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AccessKey }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.SecretKey }}
+          AWS_REGION: us-east-1
+        
       - name: Cypress.io
         uses: cypress-io/github-action@v5.0.7
         with:
