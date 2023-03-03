@@ -17,9 +17,9 @@ jobs:
           browser: chrome
           component: true
           auto-cancel-after-failures: 1
-      - name: Comment Coverage
-        uses: Tintef/nyc-reporter-action@0.1.0
-        with:
-          GITHUB_TOKEN: ${{ secrets.TOKEN }}
-          REPORTER: 'text-summary'
+      #- name: Comment Coverage
+      #  uses: Tintef/nyc-reporter-action@0.1.0
+      #  with:
+      #    GITHUB_TOKEN: ${{ secrets.TOKEN }}
+      #    REPORTER: 'text-summary'
         
