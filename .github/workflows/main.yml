@@ -21,4 +21,14 @@ jobs:
       #  with:
       #    GITHUB_TOKEN: ${{ secrets.TOKEN }}
       #    REPORTER: 'text-summary'
+      
+      - name: Code coverage-reporter
+        # You may pin to the exact commit or the version.
+        # uses: tj-actions/coverage-reporter@3eef0fe5e5d3881cc8faa2fb1365296edbf8af60
+        uses: tj-actions/coverage-reporter@v5.1
+        with:
+          # GITHUB_TOKEN or a Repo scoped PAT
+          token: ${{ secrets.TOKEN }}
+          # Specify a coverage command to run the test.
+          coverage-command: "npx nyc report --reporter=text-summary"
         
