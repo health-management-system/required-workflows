@@ -1,33 +1,33 @@
 # Read more here: https://github.com/marketplace/actions/amplify-cli-action
 
-name: Required Cypress E2E Tests
-on:
-  workflow_dispatch
+#name: Required Cypress E2E Tests
+#on:
+#  workflow_dispatch
   #pull_request:
    # branches:
     #  - 'master'
-jobs:
-  cypress-e2e:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3.3.0
+#jobs:
+#  cypress-e2e:
+#    runs-on: ubuntu-latest
+#    steps:
+#      - name: Checkout
+#        uses: actions/checkout@v3.3.0
         
-      - name: configure amplify
-        uses: ambientlight/amplify-cli-action@0.3.0
-        with:
-          amplify_command: configure
-          amplify_env: hms
-        env:
-          AWS_ACCESS_KEY_ID: ${{ secrets.AccessKey }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.SecretKey }}
-          AWS_REGION: us-east-1
+#      - name: configure amplify
+#        uses: ambientlight/amplify-cli-action@0.3.0
+#        with:
+#          amplify_command: configure
+#          amplify_env: hms
+#        env:
+#          AWS_ACCESS_KEY_ID: ${{ secrets.AccessKey }}
+#          AWS_SECRET_ACCESS_KEY: ${{ secrets.SecretKey }}
+#          AWS_REGION: us-east-1
         
-      - name: Cypress.io
-        uses: cypress-io/github-action@v5.0.7
-        with:
-          start: npm start
-          wait-on: 'http://localhost:3000'
-          wait-on-timeout: 120
-          browser: chrome
-          record: false
+#      - name: Cypress.io
+#        uses: cypress-io/github-action@v5.0.7
+#        with:
+#          start: npm start
+#          wait-on: 'http://localhost:3000'
+#          wait-on-timeout: 120
+#          browser: chrome
+#          record: false
