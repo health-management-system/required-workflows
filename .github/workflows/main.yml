@@ -1,8 +1,11 @@
 name: Required Cypress Component Tests
 on:
   pull_request:
+    types:
+      - opened
     branches:
-      - main
+      - 'master'
+      - 'main'
 
 jobs:
   cypress-run:
